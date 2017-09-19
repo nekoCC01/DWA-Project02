@@ -1,0 +1,28 @@
+body {
+    font-family: 'Lato', sans-serif, "Times New Roman", Georgia, Serif;
+}
+h1, legend {
+    color: darkcyan;
+}
+
+input[type=submit] {
+    height: 40px;
+    border-radius: 4px;
+    border: 2px solid darkcyan;
+    cursor: pointer;
+    margin-top: 7px;
+    text-align: center;
+    background-color: transparent;
+    color: darkcyan;
+    padding: 0 30px;
+}
+
+fieldset {
+    padding: 15px 20px 30px 15px;
+    border-radius: 4px;
+    border: 1px solid darkcyan;
+}
+
+.form_container {
+    max-width: 70%;
+}
