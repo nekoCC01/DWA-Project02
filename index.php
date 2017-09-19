@@ -1,55 +1,60 @@
-<?php require('getQuotes.php'); ?>
+<?php require('getQuote.php'); ?>
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Project02 - YouQuoted</title>
-
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css">
-
-        <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/pure-min.css"> -->
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/cerulean/bootstrap.min.css"> -->
+    <title>Project02 - Great Quote Pretender</title>
 
     <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Satisfy" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Coustard" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
 
 </head>
 <body>
 
+<div class="container">
+    <h1>The Great Quote Pretender</h1>
+    <div class="form_container <?= $class_form ?>">
+        <form method="GET" action="/">
+            <fieldset>
+                <legend>Author</legend>
+                <label for="username">Enter your name: </label>
+                <input type="text" name="username" id="username" size="30"><br/>
+                <p class="<?=$class_feedback_message?>">Please provide a name!</p>
+            </fieldset>
+            <fieldset>
+                <legend>Gender</legend>
+                <input type="radio" name="gender" value="female" id="female" checked>
+                <label for="female">Female</label><br/>
+                <input type="radio" name="gender" value="male" id="male">
+                <label for="male">Male</label><br/>
+            </fieldset>
+            <fieldset>
+                <legend>Language</legend>
+                <select name="language" id="language">
+                    <option value="English" selected>English</option>
+                    <option value="German">German</option>
+                    <option value="French">French</option>
+                </select><br/>
+            </fieldset>
+            <input type="submit" value="Select Random Quote">
+        </form>
+    </div>
 
-<h1>Quote Generator</h1>
-<div class="form_container <?=$class_hide?>">
-    <form method="GET" action="/">
-        <fieldset>
-            <legend>Author</legend>
-            <label for="username">Enter your name: </label>
-            <input type="text" name="username" id="username" size="30"><br/>
-        </fieldset>
-        <fieldset>
-            <legend>Gender</legend>
-            <input type="radio" name="gender" value="female" id="female" checked>
-            <label for="female">Female</label><br/>
-            <input type="radio" name="gender" value="male" id="male">
-            <label for="male">Male</label><br/>
-        </fieldset>
-        <fieldset>
-            <legend>Language</legend>
-            <select name="language" id="language">
-                <option value="english" selected>English</option>
-                <option value="german">German</option>
-            </select><br/>
-        </fieldset>
-        <input type="submit" value="Select Random Quote">
-    </form>
+    <?php if($hasInput) : ?>
+    <div class="img_container">
+        <img src="img/background_<?=$_GET['gender']?>.png">
+        <p class="quote"><?=$random_quote['quote']?></p>
+        <p class="name"><?=$_GET['username']?></p>
+        <img class="original_thinker_img" src="img/<?=$random_quote['img']?>" alt="">
+    </div>
+        <form action="/">
+        <input type="submit" value="Show Form again">
+        </form>
+    <?php endif; ?>
 </div>
-<div class="img_container">
-<img src="img/background_male.png">
-    <p class="quote">Test Text</p>
-    <p class="name">Name</p>
-    <img class="original_thinker_img" src="img/Hobbes.jpg" alt="">
-</div>
-<p></p>
 
 </body>
 </html>

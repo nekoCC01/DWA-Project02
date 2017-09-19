@@ -1,8 +1,16 @@
 body {
     font-family: 'Lato', sans-serif, "Times New Roman", Georgia, Serif;
 }
+h1 {
+    text-align: center;
+}
+
 h1, legend {
     color: darkcyan;
+}
+.container {
+    margin: 0 auto;
+    width: 800px;
 }
 
 input[type=submit] {
@@ -10,7 +18,8 @@ input[type=submit] {
     border-radius: 4px;
     border: 2px solid darkcyan;
     cursor: pointer;
-    margin-top: 7px;
+    margin: 7px auto;
+    display: block;
     text-align: center;
     background-color: transparent;
     color: darkcyan;
@@ -18,15 +27,15 @@ input[type=submit] {
 }
 
 fieldset {
-    padding: 15px 20px 30px 15px;
+    padding: 15px 20px 30px 30px;
     border-radius: 4px;
     border: 1px solid darkcyan;
 }
 
-.form_container {
-    max-width: 70%;
+fieldset p {
+    color: darkcyan;
+    font-size: 0.9em;
 }
-
 
 .hide {
     display:none;
@@ -39,19 +48,20 @@ fieldset {
 
 .img_container p.quote {
     width: 310px;
-    border: 1px solid;
     position: absolute;
     left: 100px;
     top: 50px;
     text-align: center;
+    font-family: 'Coustard', serif;
 }
 .img_container p.name {
     width: 210px;
-    border: 1px solid;
     position: absolute;
     left: 140px;
-    top: 285px;
+    top: 265px;
     text-align: center;
+    font-family: 'Satisfy', cursive;
+    font-size: 30px;
 }
 
 .img_container img.original_thinker_img {
