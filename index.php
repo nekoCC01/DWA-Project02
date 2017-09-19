@@ -1,3 +1,5 @@
+<?php require('getQuotes.php'); ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,7 +19,7 @@
 
 
 <h1>Quote Generator</h1>
-<div class="form_container">
+<div class="form_container <?=$class_hide?>">
     <form method="GET" action="/">
         <fieldset>
             <legend>Author</legend>
@@ -41,7 +43,13 @@
         <input type="submit" value="Select Random Quote">
     </form>
 </div>
-
+<div class="img_container">
+<img src="img/background_male.png">
+    <p class="quote">Test Text</p>
+    <p class="name">Name</p>
+    <img class="original_thinker_img" src="img/Hobbes.jpg" alt="">
+</div>
+<p></p>
 
 </body>
 </html>

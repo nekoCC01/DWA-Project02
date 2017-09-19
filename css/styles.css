@@ -26,3 +26,37 @@ fieldset {
 .form_container {
     max-width: 70%;
 }
+
+
+.hide {
+    display:none;
+}
+
+.img_container {
+    position: relative;
+    margin-top: 10px;
+}
+
+.img_container p.quote {
+    width: 310px;
+    border: 1px solid;
+    position: absolute;
+    left: 100px;
+    top: 50px;
+    text-align: center;
+}
+.img_container p.name {
+    width: 210px;
+    border: 1px solid;
+    position: absolute;
+    left: 140px;
+    top: 285px;
+    text-align: center;
+}
+
+.img_container img.original_thinker_img {
+    position: absolute;
+    top: 310px;
+    left: 560px;
+    z-index: -1;
+}
