@@ -14,8 +14,9 @@ require('helpers.php');
 $quotesJson = file_get_contents('quotes.json');
 $quotes = json_decode($quotesJson, true);
 
+//boolean value to regulate the display of img_container
 $hasInput = false;
-//class for hiding the form
+//class for hiding the form & the feedback message
 $class_form = '';
 $class_feedback_message = 'hide';
 
