@@ -8,6 +8,12 @@ h1 {
 h1, legend {
     color: darkcyan;
 }
+
+h1 span {
+    color: black;
+}
+
+
 .container {
     margin: 0 auto;
     width: 800px;

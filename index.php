@@ -15,7 +15,7 @@
 <body>
 
 <div class="container">
-    <h1>The Great Quote Pretender</h1>
+    <h1>The Great <span>Quote</span> Pretender</h1>
     <div class="form_container <?= $class_form ?>">
         <form method="GET" action="/">
             <fieldset>
