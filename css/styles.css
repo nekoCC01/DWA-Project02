@@ -1,6 +1,7 @@
 body {
     font-family: 'Lato', sans-serif, "Times New Roman", Georgia, Serif;
 }
+
 h1 {
     text-align: center;
 }
@@ -12,7 +13,6 @@ h1, legend {
 h1 span {
     color: black;
 }
-
 
 .container {
     margin: 0 auto;
@@ -44,7 +44,7 @@ fieldset p {
 }
 
 .hide {
-    display:none;
+    display: none;
 }
 
 .img_container {
@@ -60,6 +60,7 @@ fieldset p {
     text-align: center;
     font-family: 'Coustard', serif;
 }
+
 .img_container p.name {
     width: 210px;
     position: absolute;
@@ -75,4 +76,10 @@ fieldset p {
     top: 310px;
     left: 560px;
     z-index: -1;
+}
+
+.error {
+    border-radius: 5px;
+    padding: 10px;
+    background-color: burlywood;
 }

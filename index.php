@@ -22,7 +22,6 @@
                 <legend>Author</legend>
                 <label for="username">Enter your name: </label>
                 <input type="text" name="username" id="username" size="30"><br/>
-                <p class="<?=$class_feedback_message?>">Please provide a name!</p>
             </fieldset>
             <fieldset>
                 <legend>Gender</legend>
@@ -43,15 +42,25 @@
         </form>
     </div>
 
-    <?php if($hasInput) : ?>
-    <div class="img_container">
-        <img src="img/background_<?=$_GET['gender']?>.png">
-        <p class="quote"><?=$random_quote['quote']?></p>
-        <p class="name"><?=$_GET['username']?></p>
-        <img class="original_thinker_img" src="img/<?=$random_quote['img']?>" alt="">
-    </div>
+    <?php if ( ! empty($errors)) : ?>
+        <div class="error">
+            <ul>
+                <?php foreach ($errors as $error) : ?>
+                    <li><?= $error ?></li>
+                <?php endforeach; ?>
+            </ul>
+        </div>
+    <?php endif ?>
+
+    <?php if ($form->isSubmitted() && empty($errors)) : ?>
+        <div class="img_container">
+            <img src="img/background_<?= $_GET['gender'] ?>.png">
+            <p class="quote"><?= $random_quote['quote'] ?></p>
+            <p class="name"><?= $form->sanitize($_GET['username']) ?></p>
+            <img class="original_thinker_img" src="img/<?= $random_quote['img'] ?>" alt="">
+        </div>
         <form action="/">
-        <input type="submit" value="Show Form again">
+            <input type="submit" value="Show Form again">
         </form>
     <?php endif; ?>
 </div>

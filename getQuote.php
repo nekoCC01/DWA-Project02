@@ -6,38 +6,41 @@
  * Time: 16:38
  */
 
-$newURL = 'showQuote.php';
-
 require('helpers.php');
+require('Form.php');
+require('Quote.php');
 
-//get all quotes from json-file
-$quotesJson = file_get_contents('quotes.json');
-$quotes = json_decode($quotesJson, true);
+use DWA\Form;
+use QuoteApp\Quote;
 
-//boolean value to regulate the display of img_container
-$hasInput = false;
-//class for hiding the form & the feedback message
+$form  = new Form($_GET);
+$quote = new Quote('quotes.json');
+
+
+//classes for hiding the form
 $class_form = '';
-$class_feedback_message = 'hide';
 
-if (!empty($_GET)) {
+if ($form->isSubmitted()) {
 
-    if(empty($_GET['username'])){
-        $class_feedback_message = '';
-    } else {
-        $hasInput = true;
+    $errors = $form->validate([
+            'username' => 'required|alpha'
+    ]);
+
+    if (empty($errors)) {
         $class_form = 'hide';
 
-        //Filter quotes by language
-        foreach ($quotes["quotes"] as $index => $quote){
-            if ($quote['language'] != $_GET['language']) {
-                unset($quotes['quotes'][$index]);
-            }
-        }
+        $filtered_quotes = $quote->getByLanguage($_GET['language']);
+
         //get random quote out of the left quotes
-        shuffle($quotes["quotes"]);
-        $random_quote = array_pop($quotes["quotes"]);
+        shuffle($filtered_quotes);
+        $random_quote = array_pop($filtered_quotes);
     }
+
 }
+
+
+
+
+
 
 
