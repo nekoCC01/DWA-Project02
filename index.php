@@ -54,10 +54,10 @@
 
     <?php if ($form->isSubmitted() && empty($errors)) : ?>
         <div class="img_container">
-            <img src="img/background_<?= $_GET['gender'] ?>.png">
+            <img src="img/background_<?= $_GET['gender'] ?>.png" alt="background-image">
             <p class="quote"><?= $random_quote['quote'] ?></p>
             <p class="name"><?= $form->sanitize($_GET['username']) ?></p>
-            <img class="original_thinker_img" src="img/<?= $random_quote['img'] ?>" alt="">
+            <img class="original_thinker_img" src="img/<?= $random_quote['img'] ?>" alt="img of the philosopher">
         </div>
         <form action="/">
             <input type="submit" value="Show Form again">
